@@ -1,13 +1,139 @@
-body {
+:root {
+  /* dark shades of primary color*/
+  --color-exclusive: #019900;
+  --color-sale: #cd3134;
+  --color-header-bg: #ddf2f3;
+  --color-border: #ebebeb;
+
+  --transition: all 0.3s linear;
+  --spacing: 0.1rem;
+  --radius: 0.25rem;
+  --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  --max-width: 1170px;
+  --fixed-width: 620px;
+}
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: arial, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 800px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+}
+/*  global classes */
+
+/* section */
+.section {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: var(--max-width);
+}
+
+.exclusive {
+  background-color: var(--color-exclusive);
+}
+
+.sale {
+  background-color: var(--color-sale);
+}
+
+.header-container {
+  background-color: var(--color-header-bg);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.header-container select {
+  display: inline-block;
+  flex-basis: 10rem;
+}
+
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.product {
+  flex-basis: 6rem;
+  border: var(--color-border) 1px solid;
+  padding: 2rem 1rem;
+}
+
+.product__image {
+  display: block;
+}
+
+.product__tag {
+  display: inline-block;
+  padding: 1rem 2rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.product__info {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 400px) {
+  .header-container {
+    justify-content: center;
+  }
+
+  .header-container select {
+    margin-top: 1rem;
+  }
 }
